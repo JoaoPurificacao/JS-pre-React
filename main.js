@@ -66,10 +66,19 @@
 // Métodos de Array
 
 const array = [1,2,3,4,5];
-const novoArray = array.filter(item => item % 2 == 0).map(item => item * 10)
+// const novoArray = array.filter(item => item % 2 == 0).map(item => item * 10)
 
-// filter() = Não altera o array original, somente pega um pedaço do mesmo
+// every() = Testa se todos os itens passam na codição e retorna o bool
+// every() = Testa se pelo menos um item passam na codição e retorna o bool
+
+const todosItensSaoNumeros = array.every(item => {
+  return typeof item == 'number';
+})
+
+const peloMenosUmNaoNumero = array.some(item => {
+  return typeof item != 'number';
+})
 
 
 
-document.body.innerText = JSON.stringify(novoArray)
+document.body.innerText = JSON.stringify(todosItensSaoNumeros)
