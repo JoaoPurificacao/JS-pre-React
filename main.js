@@ -47,21 +47,31 @@
 
 // Optional Chaining
 
-const user = {
-  name: 'Diego',
-  age: 27,
-  address:{
-    street: 'Rua Teste',
-    number: 176,
-    zip: {
-      code: '89160000',
-      city: 'Rio do Sul'
-    },
-    showFullAddress(){
-      return 'ok';
-    }
-  },
-};
+// const user = {
+//   name: 'Diego',
+//   age: 27,
+//   address:{
+//     street: 'Rua Teste',
+//     number: 176,
+//     zip: {
+//       code: '89160000',
+//       city: 'Rio do Sul'
+//     },
+//     showFullAddress(){
+//       return 'ok';
+//     }
+//   },
+// };
 
-// document.body.innerText = user.address?.zip?.code ?? 'Não informado';
-document.body.innerText = user.address?.showFullAddress?.() ?? 'Não informado';
+// Métodos de Array
+
+const array = [1,2,3,4,5];
+const novoArray = array.map(item => {
+  return item *2;
+})
+
+// map() = Retorna um array dos mesmo tamanho que o original, obrigatoriamnte. Útil caso deseje transformar um array em outro com modificações;
+
+
+
+document.body.innerText = JSON.stringify(novoArray)
