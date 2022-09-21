@@ -1,12 +1,6 @@
+// Comando Inicialização do Servidor: npm run dev
+
 // Objetos
-// const user = {
-//   name: 'Diego',
-//   idade: 27,
-//   address:{
-//     street: 'Rua Teste',
-//     number: 176,
-//   },
-// };
 
 //document.body.innerText = ('name' in user) //Validar se existe uma chave no objeto
 
@@ -20,9 +14,9 @@
 
 //Ambas as linhas retornam o mesmo resultado
 // const address =  user.address
-const {address, idade: age, nickname = 'Fernandes'} = user
+// const {address, idade: age, nickname = 'Fernandes'} = user
 
-document.body.innerText = JSON.stringify({address, age, nickname})
+// document.body.innerText = JSON.stringify({address, age, nickname})
 
 //Rest ou Resto
 
@@ -35,13 +29,13 @@ document.body.innerText = JSON.stringify({address, age, nickname})
 
 // const [primeiro, , terceiro, ...todoResto] = array
 
-const nome = 'Diego';
-const idade = 27;
+// const nome = 'Diego';
+// const idade = 27;
 
-const user = {
-  nome,
-  idade,
-};
+// const user = {
+//   nome,
+//   idade,
+// };
 
 
 // A sintaxe abaixo produz o mesmo resultado que a sintaxe acima  
@@ -49,3 +43,25 @@ const user = {
 //   nome: nome,
 //   idade: idade,
 // };
+
+
+// Optional Chaining
+
+const user = {
+  name: 'Diego',
+  age: 27,
+  address:{
+    street: 'Rua Teste',
+    number: 176,
+    zip: {
+      code: '89160000',
+      city: 'Rio do Sul'
+    },
+    showFullAddress(){
+      return 'ok';
+    }
+  },
+};
+
+// document.body.innerText = user.address?.zip?.code ?? 'Não informado';
+document.body.innerText = user.address?.showFullAddress?.() ?? 'Não informado';
