@@ -66,11 +66,9 @@
 // Métodos de Array
 
 const array = [1,2,3,4,5];
-const novoArray = array.map(item => {
-  return item *2;
-})
+const novoArray = array.filter(item => item % 2 == 0).map(item => item * 10)
 
-// map() = Retorna um array dos mesmo tamanho que o original, obrigatoriamnte. Útil caso deseje transformar um array em outro com modificações;
+// filter() = Não altera o array original, somente pega um pedaço do mesmo
 
 
 
