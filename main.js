@@ -79,9 +79,8 @@ const array = [1,2,3,4,5];
 //   return typeof item != 'number';
 // })
 
-const par = array.find(item => item % 2 == 0) //Encontra o primeiro valor que atende a condição e retorna o valor
+const soma = array.reduce((acc, item) => {
+  return acc + item
+},0)
 
-const indexPar = array.findIndex(item => item % 2 == 0) //Encontra o primeiro valor que atende a condição e retorna a posição no array
-
-
-document.body.innerText = JSON.stringify(todosItensSaoNumeros)
+document.body.innerText = JSON.stringify(soma)
