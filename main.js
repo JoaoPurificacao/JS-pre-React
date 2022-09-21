@@ -69,16 +69,19 @@ const array = [1,2,3,4,5];
 // const novoArray = array.filter(item => item % 2 == 0).map(item => item * 10)
 
 // every() = Testa se todos os itens passam na codição e retorna o bool
-// every() = Testa se pelo menos um item passam na codição e retorna o bool
+// some() = Testa se pelo menos um item passam na codição e retorna o bool
 
-const todosItensSaoNumeros = array.every(item => {
-  return typeof item == 'number';
-})
+// const todosItensSaoNumeros = array.every(item => {
+//   return typeof item == 'number';
+// })
 
-const peloMenosUmNaoNumero = array.some(item => {
-  return typeof item != 'number';
-})
+// const peloMenosUmNaoNumero = array.some(item => {
+//   return typeof item != 'number';
+// })
 
+const par = array.find(item => item % 2 == 0) //Encontra o primeiro valor que atende a condição e retorna o valor
+
+const indexPar = array.findIndex(item => item % 2 == 0) //Encontra o primeiro valor que atende a condição e retorna a posição no array
 
 
 document.body.innerText = JSON.stringify(todosItensSaoNumeros)
