@@ -1,49 +1,13 @@
-// Promises
-    // .then/ .catch 
+//ES Modules
 
-// const somaDoisNumeros = (a,b) =>{
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve(a+b);
-//         }, 2000);
-//     });
-// } 
+// Named Export
+    // import {soma, sub} from './lib/math'
+    // console.log(soma(1,2))
+    // console.log(sub(5,2))
 
-// somaDoisNumeros()
-//     .then(soma => {document.body.innerText = soma}) //Caso dê tudo certo
-//     .catch(err => {console.log(err)}) //Caso dê tudo errado
-//     .finally(()=>{}) //Executa no final, independente de dar certo ou errado
+    import {soma as sum} from './lib/math' //Mudando o nomes após a importação
+    console.log(sum(1,2))
+    // console.log(sub(5,2))
 
-//Primeira Sintaxe
-fetch('https://api.github.com/users/joaopurificacao')
-.then(response => {
-    return response.json();
-})
-.then(body => {
-    console.log(body)
-})
-.catch(err => {
-    console.log(err)
-})
-.finally(()=>{
-    console.log('Finalizou')
-})
-
-//Segunda Sintaxe
-async function buscaUsuario(){
-    try{
-        const response = await fetch('https://api.github.com/users/heldermeyer');
-        const body = await response.json();
-        // console.log(body);
-        return body.name
-    }catch(err){
-        console.log(err);
-    }finally{
-        console.log('Finalizou pela segunda vez')
-    }
-    
-}
-
-buscaUsuario().then(nome => {
-    console.log(nome);
-})
+// import * as math from './lib/math' // Importa todo o arquivo como um objeto
+// console.log(math.PI)
